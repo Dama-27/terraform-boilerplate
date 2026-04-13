@@ -41,7 +41,7 @@ output "second_animal" {
 # Simple: how many items exist?
 
 output "animal_count" {
-  value = length(var.animals)
+  value = length(var.animals) # returns 3
 }
 
 
@@ -55,11 +55,11 @@ variable "keys" {
 
 variable "values" {
   type    = list(string)
-  default = ["Alex", "DevOps"]
+  default = ["Kamal", "DevOps"]
 }
 
 output "user_map" {
-  value = map(var.keys, var.values)
+  value = map(var.keys, var.values) # Returns {"name" = "Kamal", "role" = "DevOps"}
 }
 
 
@@ -69,13 +69,13 @@ output "user_map" {
 variable "user_info" {
   type = map(string)
   default = {
-    name = "Alex"
+    name = "Kalum"
     age  = "25"
   }
 }
 
 output "user_name" {
-  value = lookup(var.user_info, "name")
+  value = lookup(var.user_info, "name") # Returns "Kalum"
 }
 
 # 6️ join() → turn list into string
@@ -87,7 +87,7 @@ variable "fruits" {
 }
 
 output "fruit_string" {
-  value = join(", ", var.fruits)
+  value = join(", ", var.fruits) # returns "apple, banana, mango"
 }
 
 
