@@ -9,18 +9,18 @@
 # 1️ concat() → combine lists
 # Basically: join multiple lists together
 
-variable "list1" {
+variable "sweets1" {
   type    = list(string)
-  default = ["cat", "dog"]
+  default = ["kawum", "kokis"]
 }
 
-variable "list2" {
+variable "sweets2" {
   type    = list(string)
-  default = ["lion", "tiger"]
+  default = ["aluwa", "kiribath"]
 }
 
-output "combined_animals" {
-  value = concat(var.list1, var.list2)
+output "combined_sweets" {
+  value = concat(var.sweets1, var.sweets2)
 }
 
 
@@ -29,11 +29,11 @@ output "combined_animals" {
 
 variable "animals" {
   type    = list(string)
-  default = ["apple", "banana", "cherry"]
+  default = ["cat", "dog", "tiger"]
 }
 
-output "second_item" {
-  value = element(var.animals, 1) # banana (index starts at 0)
+output "second_animal" {
+  value = element(var.animals, 1) # dog (index starts at 0)
 }
 
 
@@ -78,7 +78,7 @@ output "user_name" {
   value = lookup(var.user_info, "name")
 }
 
-# 6️⃣ join() → turn list into string
+# 6️ join() → turn list into string
 # Combine items into a single sentence
 
 variable "fruits" {
