@@ -1,3 +1,5 @@
-As previously mentioned you do not need to use variables.tf you name it you can use is as long as it ends with .tf
+As mentioned earlier, you don’t _have_ to use a file named `variables.tf`. Terraform doesn’t care about the file name—as long as it ends with `.tf`, it will be processed.
 
-Next this is highly recoended, variables are essential if you need good programing practices industrial standerds
+That said, using `variables.tf` is a common and recommended convention.
+
+Variables are especially important if you want to follow good programming practices and industry standards. They make your code more reusable, easier to manage, and much cleaner as your project grows.
