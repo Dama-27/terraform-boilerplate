@@ -1,28 +1,52 @@
-# aws us-east-1
+# Same provider, multiple regions (AWS example)
+# Now the headace is starting ------------->>>> JUST KIDDING
+
+# --------------------------------------------------
+# 🇺🇸 us-east-1
+
 provider "aws" {
-  alias  = "us-east-1"
+  alias  = "use1"
   region = "us-east-1"
 }
 
-# aws us-west-2
+# --------------------------------------------------
+# 🇺🇸 us-west-2
+
 provider "aws" {
-  alias  = "us-west-2"
+  alias  = "usw2"
   region = "us-west-2"
 }
 
-# creating ec2 instance in us-east-1
-resource "aws_instance" "example" {
+# --------------------------------------------------
+# EC2 in us-east-1
+
+resource "aws_instance" "east_instance" {
   ami           = "ami-0123456789abcdef0"
   instance_type = "t2.micro"
-  provider      = "aws.us-east-1"
+
+  provider = aws.use1
 }
 
-# creating ec2 instance in us-west-2
-resource "aws_instance" "example2" {
+# --------------------------------------------------
+# EC2 in us-west-2
+
+resource "aws_instance" "west_instance" {
   ami           = "ami-0123456789abcdef0"
   instance_type = "t2.micro"
-  provider      = "aws.us-west-2"
+
+  provider = aws.usw2
 }
 
-# use alias key to specify the region as the name use shoud understand what alias means otherwise learn some englsih HAHAHA
-# likewise you can do other resource creation with diffrent regions
+# --------------------------------------------------
+# What is "alias"?
+
+# alias = just a nickname for the provider
+
+# Example:
+# aws.use1 → AWS in us-east-1
+# aws.usw2 → AWS in us-west-2
+
+# MAN Use meaningful short names (don’t write full essays)
+
+# And yes… if you didn’t understand alias,
+# go learn a bit of English bro 😂 😂 😂 (just kidding… Google it)
