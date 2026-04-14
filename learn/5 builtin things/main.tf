@@ -6,7 +6,7 @@
 
 # Don’t worry about memorizing everything now — just understand the idea.
 
-# 1️ concat() → combine lists
+# 1️ concat() - combine lists
 # Basically: join multiple lists together
 
 variable "sweets1" {
@@ -20,11 +20,11 @@ variable "sweets2" {
 }
 
 output "combined_sweets" {
-  value = concat(var.sweets1, var.sweets2)
+  value = concat(var.sweets1, var.sweets2) # returns ["kawum", "kokis", "aluwa", "kiribath"]
 }
 
 
-# 2️ element() → pick one item from a list
+# 2️ element() - pick one item from a list
 # Think: "give me item at this position"
 
 variable "animals" {
@@ -37,7 +37,7 @@ output "second_animal" {
 }
 
 
-# 3️ length() → count items in a list
+# 3️ length() - count items in a list
 # Simple: how many items exist?
 
 output "animal_count" {
@@ -45,7 +45,7 @@ output "animal_count" {
 }
 
 
-# 4️ map() → create key-value pairs
+# 4️ map() - create key-value pairs
 # Turn two lists into a dictionary (map)
 
 variable "keys" {
@@ -63,7 +63,7 @@ output "user_map" {
 }
 
 
-# 5️ lookup() → get value from a map
+# 5️ lookup() - get value from a map
 # Like asking: "hey, what’s the value for this key?"
 
 variable "user_info" {
@@ -78,7 +78,7 @@ output "user_name" {
   value = lookup(var.user_info, "name") # Returns "Kalum"
 }
 
-# 6️ join() → turn list into string
+# 6️ join() - turn list into string
 # Combine items into a single sentence
 
 variable "fruits" {
